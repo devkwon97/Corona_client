@@ -51,7 +51,7 @@
 
 <h2>QR코드로 촬영 화면</h2>
 
-<img src="https://user-images.githubusercontent.com/33985795/87874122-57ccb400-ca02-11ea-8381-31693e551efa.jpg" width="35%"></img>
+![6](https://user-images.githubusercontent.com/60598284/94289555-d65e4880-ff93-11ea-9d9c-7bc605850a4b.jpg)
 
 체크인을 하기 위해서 해당 장소의 QR 코드를 촬영해줍니다
 
@@ -60,7 +60,7 @@
 
 <h2>QR코드로 촬영 후, 체크리스트 작성 화면</h2>
 
-<img src="https://user-images.githubusercontent.com/33985795/87873809-79786c00-c9ff-11ea-9efb-19d32dcde449.jpg" width="35%"></img>
+![7](https://user-images.githubusercontent.com/60598284/94289558-d6f6df00-ff93-11ea-8db0-8d0f3bfd9ece.jpg)
 
 체크리스트를 작성 후 제출하게 되면 체크인이 됩니다
 
