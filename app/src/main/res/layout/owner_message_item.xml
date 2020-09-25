@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.angel.daily_heros.ui.main.message.OwnerMessageModel" />
+
+        <variable
+            name="actionListener"
+            type="com.angel.daily_heros.ui.main.message.MessageActionListener" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+
+    </data>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_background"
+        android:onClick="@{() -> actionListener.onClickMessage(position)}"
+        android:paddingHorizontal="20dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/background_white_rounded"
+            android:paddingVertical="20dp">
+
+            <ImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:glide_profile_src="@{model.profile}"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/TextNotoReg16"
+                android:layout_gravity="start"
+                android:layout_marginStart="12dp"
+                android:text="@{@string/owner(model.place,model.name)}"
+                android:textColor="#de000000"
+                app:layout_constraintStart_toEndOf="@+id/iv_profile"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lineHeight="24dp" />
+
+
+            <TextView
+                style="@style/TextNotoReg14"
+                android:layout_width="0dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="0.25sp"
+                android:maxLines="2"
+                android:minLines="2"
+                android:paddingStart="0dp"
+                android:paddingEnd="20dp"
+                android:text="@{model.msg}"
+                android:textColor="#99000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                app:lineHeight="20dp"
+                tools:text="0시간 전 방문" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>

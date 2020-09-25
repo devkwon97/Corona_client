@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.angel.daily_heros.ui.main.history.HistoryModel" />
+
+        <variable
+            name="actionListener"
+            type="com.angel.daily_heros.ui.main.history.HistoryActionListener" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_background"
+        android:onClick="@{() -> actionListener.onClickHistory(position)}"
+        android:paddingHorizontal="20dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginBottom="17dp"
+            android:background="@drawable/background_white_rounded">
+
+            <ImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginVertical="20dp"
+                android:layout_marginStart="24dp"
+                android:glide_profile_src="@{model.profile}"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+                app:layout_constraintStart_toEndOf="@+id/iv_profile"
+                app:layout_constraintTop_toTopOf="@+id/iv_profile">
+
+                <TextView
+                    style="@style/TextNotoReg16"
+                    android:layout_gravity="start"
+                    android:text="점주"
+                    android:textColor="#de000000"
+                    app:lineHeight="24dp" />
+
+                <TextView
+                    style="@style/TextNotoReg14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="6dp"
+                    android:text="@{model.name}"
+                    android:textColor="#99000000"
+                    app:lineHeight="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_profile">
+
+                <TextView
+                    android:id="@+id/tv_place"
+                    style="@style/TextNotoReg16"
+                    android:layout_gravity="end"
+                    android:text="@{model.place}"
+                    android:textColor="#de000000"
+                    app:lineHeight="24dp"
+                    tools:text="김밥천국평양점" />
+
+                <TextView
+                    style="@style/TextNotoReg14"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="6dp"
+                    android:text="@{model.visitTime}"
+                    android:textColor="#99000000"
+                    app:lineHeight="20dp"
+                    tools:text="0시간 전 방문" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>

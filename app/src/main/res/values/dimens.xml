@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="qr_border_width">4dp</dimen>
+
+
+    <!-- Text Size -->
+    <dimen name="text_size_accent_56sp">56sp</dimen>
+    <dimen name="text_size_accent_44sp">44sp</dimen>
+    <dimen name="text_size_h1_28sp">28sp</dimen>
+    <dimen name="text_size_h2_23sp">23sp</dimen>
+    <dimen name="text_size_h2_20sp">20sp</dimen>
+    <dimen name="text_size_title_18sp">18sp</dimen>
+    <dimen name="text_size_title_19sp">19sp</dimen>
+    <dimen name="text_size_ab_title_16sp">16sp</dimen>
+    <dimen name="text_size_ab_title_18sp">18sp</dimen>
+    <dimen name="text_size_body1_15sp">15sp</dimen>
+    <dimen name="text_size_body1_14sp">14sp</dimen>
+    <dimen name="text_size_body2_12sp">12sp</dimen>
+    <dimen name="text_size_small_text_11sp">11sp</dimen>
+    <dimen name="text_size_caption_8sp">8sp</dimen>
+
+    <dimen name="text_line_spacing_accent_8sp">8sp</dimen>
+    <dimen name="text_line_spacing_h1_0sp">0sp</dimen>
+    <dimen name="text_line_spacing_h2_8sp">8sp</dimen>
+    <dimen name="text_line_spacing_title_0sp">0sp</dimen>
+    <dimen name="text_line_spacing_ab_title_0sp">0sp</dimen>
+    <dimen name="text_line_spacing_body1_10sp">10sp</dimen>
+    <dimen name="text_line_spacing_body2_8sp">8sp</dimen>
+    <dimen name="text_line_spacing_small_text_0sp">0sp</dimen>
+    <dimen name="text_line_spacing_caption_0sp">0sp</dimen>
+
+
+</resources>

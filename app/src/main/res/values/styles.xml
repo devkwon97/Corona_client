@@ -1,0 +1,278 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppCompat.AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#f5f5f5</item>
+        <item name="colorPrimaryDark">#e4e4e4</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="AppCompat.AppTheme.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--    &lt;!&ndash; Launcher for splash theme. &ndash;&gt;-->
+    <!--    <style name="AppCompat.AppTheme.NoActionBar.Launcher" parent="AppCompat.AppTheme.NoActionBar">-->
+    <!--        <item name="android:windowBackground">@drawable/splash_screen</item>-->
+    <!--    </style>-->
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!--
+        ** Common Text Styles **
+
+        Warn : Common Text !!default color is white!!
+
+        Text styles are set as defaults.
+        If you want to use another color or lineSpacing, width, height override it in xml file
+
+    -->
+    <style name="TextLatoBlack20">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_h2_20sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_h2_8sp</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+    </style>
+
+    <style name="TextLatoBlack14">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_body1_14sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_body1_10sp</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+    </style>
+
+
+    <style name="TextLatoBlack12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_body2_12sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_size_body2_12sp</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+    </style>
+
+    <style name="TextLatoBlack11">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_small_text_11sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+    </style>
+
+    <style name="TextLatoBlack44">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_accent_44sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_accent_8sp</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+    </style>
+
+    <style name="TextLatoBlack56">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_accent_56sp</item>
+        <item name="android:textColor">@color/text_primary_dark_bg_db</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_h1_0sp</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+    </style>
+
+    <style name="TextNotoLigth28">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_h1_28sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_body2_8sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_light</item>
+    </style>
+
+    <style name="TextNotoReg28">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_h1_28sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_body2_8sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item>
+    </style>
+
+    <style name="TextLatoReg18">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_title_18sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_title_0sp</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+    </style>
+
+
+    <style name="TextNotoReg23">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_h2_23sp</item>
+        <item name="android:textColor">@color/text_main_22</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_title_0sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item>
+    </style>
+
+
+    <style name="TextNotoMedium20">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_h2_20sp</item>
+        <item name="android:textColor">@color/text_main_22</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_title_0sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_medium</item>
+    </style>
+
+    <style name="TextNotoReg20">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_h2_20sp</item>
+        <item name="android:textColor">@color/text_main_22</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_title_0sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item>
+    </style>
+
+
+    <style name="TextNotoLight20">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_h2_20sp</item>
+        <item name="android:textColor">@color/text_main_22</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_title_0sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_light</item>
+    </style>
+
+    <style name="TextNotoLigth18">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_title_18sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_title_0sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_light</item>
+    </style>
+
+    <style name="TextNotoMedium19">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_title_19sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_ab_title_0sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_medium</item>
+    </style>
+
+
+    <style name="TextNotoReg19">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_title_19sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_ab_title_0sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item>
+    </style>
+
+    <style name="TextNotoReg18">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_ab_title_18sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_ab_title_0sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item>
+    </style>
+
+    <style name="TextNotoReg16">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_ab_title_16sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_ab_title_0sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item>
+    </style>
+
+    <style name="TextNotoReg14">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_body1_14sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_size_body1_14sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item>
+    </style>
+
+    <style name="TextNotoReg12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_body2_12sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_body2_8sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item>
+    </style>
+
+    <style name="TextNotoReg11">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_small_text_11sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_size_small_text_11sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item>
+    </style>
+
+    <style name="TextNotoBold15">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_body1_15sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_size_body1_14sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_bold</item>
+    </style>
+
+
+    <style name="TextNotoBold14">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_body1_14sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_size_body1_14sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_bold</item>
+    </style>
+
+    <style name="TextNotoBold12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_body2_12sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_size_body2_12sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_bold</item>
+    </style>
+
+    <style name="TextNotoBold11">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_small_text_11sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_size_small_text_11sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_bold</item>
+    </style>
+
+    <style name="TextNotoBold18">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_title_18sp</item>
+        <item name="android:textColor">@color/text_default_reg_bg_ff</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_title_0sp</item>
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_bold</item>
+    </style>
+
+</resources>

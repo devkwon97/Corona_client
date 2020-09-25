@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.angel.daily_heros.ui.onboarding.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_mainTabsFragment"
+            app:destination="@id/mainTabsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainTabsFragment"
+        android:name="com.angel.daily_heros.ui.main.MainTabsFragment"
+        android:label="MainTabsFragment" >
+        <action
+            android:id="@+id/action_mainTabsFragment_to_QRScannerFragment"
+            app:destination="@id/QRScannerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkListFragment"
+        android:name="com.angel.daily_heros.ui.main.qr.check.CheckListFragment"
+        android:label="CheckListFragment" >
+        <action
+            android:id="@+id/action_checkListFragment_to_mainTabsFragment"
+            app:destination="@id/mainTabsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/QRScannerFragment"
+        android:name="com.angel.daily_heros.ui.main.qr.camera.QRScannerFragment"
+        android:label="QRScannerFragment" >
+        <action
+            android:id="@+id/action_QRScannerFragment_to_checkListFragment"
+            app:destination="@id/checkListFragment" />
+    </fragment>
+</navigation>

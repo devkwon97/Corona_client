@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.angel.daily_heros.ui.main.qr.check.CheckType" />
+
+        <import type="com.angel.daily_heros.ui.main.qr.check.AnswerType" />
+
+        <variable
+            name="viewModel"
+            type="com.angel.daily_heros.ui.main.qr.check.CheckListViewModel" />
+
+        <variable
+            name="actionListener"
+            type="com.angel.daily_heros.ui.main.qr.check.CheckListActionListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_check_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        style="@style/TextNotoReg20"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/check_list_title"
+                        android:textColor="#de000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:lineHeight="30dp" />
+
+                    <TextView
+                        android:id="@+id/tv_temperature_guide"
+                        style="@style/TextNotoReg14"
+                        android:layout_marginTop="34dp"
+                        android:text="@string/check_temperature_guide"
+                        android:textColor="#de000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                        app:lineHeight="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_temperature"
+                        style="@style/TextNotoReg23"
+                        android:layout_marginTop="34dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@{@string/doc(viewModel.doc)}"
+                        android:textColor="#de000000"
+                        app:layout_constraintBottom_toTopOf="@+id/v_under_bar"
+                        app:layout_constraintEnd_toEndOf="@+id/v_under_bar"
+                        app:layout_constraintStart_toStartOf="@+id/v_under_bar"
+                        app:lineHeight="32sp" />
+
+
+                    <View
+                        android:id="@+id/v_under_bar"
+                        android:layout_width="144dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="72dp"
+                        android:alpha="0.38"
+                        android:background="#de000000"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_temperature_guide" />
+
+
+                    <TextView
+                        android:id="@+id/tv_check_one_guide"
+                        style="@style/TextNotoReg14"
+                        android:layout_marginTop="56dp"
+                        android:text="@string/check_one"
+                        android:textColor="#de000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/v_under_bar"
+                        app:lineHeight="20sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_check_one_guide">
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:background="@drawable/btn_no"
+                            android:checked="@{viewModel.contact.answer == AnswerType.NO ? true :false}"
+                            android:onClick="@{() -> actionListener.onCheckNo(CheckType.CONTACT)}"
+                            android:textOff=""
+                            android:textOn="" />
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:background="@drawable/btn_yes"
+                            android:checked="@{viewModel.contact.answer == AnswerType.YES ? true :false}"
+                            android:onClick="@{() -> actionListener.onCheckYes(CheckType.CONTACT)}"
+                            android:textOff=""
+                            android:textOn="" />
+
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/tv_check_two_guide"
+                        style="@style/TextNotoReg14"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/check_two"
+                        android:textColor="#de000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rl_one"
+                        app:lineHeight="20sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_check_two_guide">
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:background="@drawable/btn_no"
+                            android:checked="@{viewModel.visit.answer == AnswerType.NO ? true :false}"
+                            android:onClick="@{() -> actionListener.onCheckNo(CheckType.VISIT)}"
+                            android:textOff=""
+                            android:textOn="" />
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:background="@drawable/btn_yes"
+                            android:checked="@{viewModel.visit.answer == AnswerType.YES ? true :false}"
+                            android:onClick="@{() -> actionListener.onCheckYes(CheckType.VISIT)}"
+                            android:textOff=""
+                            android:textOn="" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_check_three_guide"
+                        style="@style/TextNotoReg14"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/check_three"
+                        android:textColor="#de000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rl_two"
+                        app:lineHeight="20sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_three"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_check_three_guide">
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:background="@drawable/btn_no"
+                            android:checked="@{viewModel.symptom.answer == AnswerType.NO ? true :false}"
+                            android:onClick="@{() -> actionListener.onCheckNo(CheckType.SYMPTOM)}"
+                            android:textOff=""
+                            android:textOn="" />
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:background="@drawable/btn_yes"
+                            android:checked="@{viewModel.symptom.answer == AnswerType.YES ? true :false}"
+                            android:onClick="@{() -> actionListener.onCheckYes(CheckType.SYMPTOM)}"
+                            android:textOff=""
+                            android:textOn="" />
+
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/tv_check_four_guide"
+                        style="@style/TextNotoReg14"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/check_four"
+                        android:textColor="#de000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rl_three"
+                        app:lineHeight="20sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_four"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_check_four_guide">
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:background="@drawable/btn_no"
+                            android:checked="@{viewModel.mask.answer == AnswerType.NO ? true :false}"
+                            android:onClick="@{() -> actionListener.onCheckNo(CheckType.MASK)}"
+                            android:textOff=""
+                            android:textOn="" />
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:background="@drawable/btn_yes"
+                            android:checked="@{viewModel.mask.answer == AnswerType.YES ? true :false}"
+                            android:onClick="@{() -> actionListener.onCheckYes(CheckType.MASK)}"
+                            android:textOff=""
+                            android:textOn="" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_check_five_guide"
+                        style="@style/TextNotoReg14"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/check_five"
+                        android:textColor="#de000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rl_four"
+                        app:lineHeight="20sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_five"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_check_five_guide">
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:background="@drawable/btn_no"
+                            android:checked="@{viewModel.handWash.answer == AnswerType.NO ? true :false}"
+                            android:onClick="@{() -> actionListener.onCheckNo(CheckType.HAND_WASH)}"
+                            android:textOff=""
+                            android:textOn="" />
+
+                        <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:background="@drawable/btn_yes"
+                            android:checked="@{viewModel.handWash.answer == AnswerType.YES ? true :false}"
+                            android:onClick="@{() -> actionListener.onCheckYes(CheckType.HAND_WASH)}"
+                            android:textOff=""
+                            android:textOn="" />
+
+
+                    </RelativeLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <View
+                    android:id="@+id/v_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="32dp"
+                    android:alpha="0.38"
+                    android:background="@android:color/black"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_check_list" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23dp"
+                    android:background="@drawable/btn_submit_active"
+                    android:onClick="@{() ->actionListener.onClickSubmit()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/v_divider" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

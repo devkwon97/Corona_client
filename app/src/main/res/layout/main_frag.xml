@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.angel.daily_heros.ui.main.MainTabsViewModel" />
+
+        <variable
+            name="actionListener"
+            type="com.angel.daily_heros.ui.main.MainTabsActionListener" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background">
+
+        <include
+            android:id="@+id/btn_bar"
+            layout="@layout/common_top_icon_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:topIconActionListenr="@{viewModel}" />
+
+
+        <FrameLayout
+            android:id="@+id/fl_main_act_my_history"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_bar" />
+
+        <FrameLayout
+            android:id="@+id/fl_main_act_owner_history"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_bar" />
+
+        <FrameLayout
+            android:id="@+id/fl_main_act_notice"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_bar" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_bottom_btn"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{() -> actionListener.onClickTab(0)}"
+                android:scaleType="fitCenter"
+                android:src="@{viewModel.selectTabIndex ==0 ? @drawable/btn_list_active : @drawable/btn_list_inactive}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{() -> actionListener.onClickTab(1)}"
+                android:scaleType="fitCenter"
+                android:src="@{viewModel.selectTabIndex ==1 ? @drawable/nav_active : @drawable/nav_inactive}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{() -> actionListener.onClickTab(2)}"
+                android:scaleType="fitCenter"
+                android:src="@{viewModel.selectTabIndex ==2 ? @drawable/chat_active : @drawable/chat_inactive}" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white"
+            app:layout_constraintTop_toTopOf="@+id/ll_bottom_btn" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.12"
+            android:background="@android:color/black"
+            app:layout_constraintTop_toTopOf="@+id/ll_bottom_btn" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

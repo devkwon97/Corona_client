@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.angel.daily_heros.ui.main.qr.history.VisitHistoryViewModel" />
+
+        <variable
+            name="scope"
+            type="kotlinx.coroutines.CoroutineScope" />
+
+        <variable
+            name="actionListener"
+            type="com.angel.daily_heros.ui.main.qr.history.VisitorPageActionListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TextNotoMedium20"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/visit_history_page_guide"
+            android:textColor="#de000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lineHeight="30sp"
+            tools:text="@string/visit_history_page_guide" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_place_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            app:action_listener="@{actionListener}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:visitor_place_tag_items="@{viewModel.visitorPlaceModels}"
+            tools:itemCount="10"
+            tools:listitem="@layout/visitor_place_tag_item" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_visitor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:paddingBottom="160dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_place_tag"
+            app:life_cycle="@{scope}"
+            app:visitor_history_items="@{viewModel.visitorModels}"
+            tools:itemCount="10"
+            tools:listitem="@layout/visitor_history_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

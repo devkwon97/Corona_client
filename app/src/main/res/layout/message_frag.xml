@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.angel.daily_heros.ui.main.message.MessagePageMode" />
+
+        <variable
+            name="viewModel"
+            type="com.angel.daily_heros.ui.main.message.MessageViewModel" />
+
+        <variable
+            name="actionListener"
+            type="com.angel.daily_heros.ui.main.message.MessagePageActionListener" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TextNotoMedium20"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.mode == MessagePageMode.WHITE_BOARD ? @string/white_board :  @string/message_page_guide}"
+            android:textColor="#de000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lineHeight="30sp"
+            tools:text="@string/message_page_guide" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:paddingTop="16dp"
+            android:paddingBottom="80dp"
+            android:visibility="@{viewModel.mode == MessagePageMode.LIST ? View.VISIBLE : View.GONE}"
+            app:action_listener="@{viewModel}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:owner_items="@{viewModel.ownerMessageModels}"
+            tools:itemCount="10"
+            tools:listitem="@layout/owner_message_item" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:paddingHorizontal="20dp"
+            android:visibility="@{viewModel.mode == MessagePageMode.VIEW ||  viewModel.mode == MessagePageMode.WHITE_BOARD ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/background_white_rounded"
+                app:layout_constraintBottom_toTopOf="@+id/btn_submit"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_profile"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginStart="24dp"
+                        android:glide_profile_src="@{viewModel.boardItem.profile}"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+                        app:layout_constraintStart_toEndOf="@+id/iv_profile"
+                        app:layout_constraintTop_toTopOf="@+id/iv_profile">
+
+                        <TextView
+                            style="@style/TextNotoReg16"
+                            android:layout_gravity="start"
+                            android:text="점주"
+                            android:textColor="#de000000"
+                            app:lineHeight="24dp" />
+
+                        <TextView
+                            style="@style/TextNotoReg14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="6dp"
+                            android:text="@{viewModel.boardItem.name}"
+                            android:textColor="#99000000"
+                            app:lineHeight="20dp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/iv_profile">
+
+                        <TextView
+                            android:id="@+id/tv_place"
+                            style="@style/TextNotoReg16"
+                            android:layout_gravity="end"
+                            android:text="@{viewModel.boardItem.place}"
+                            android:textColor="#de000000"
+                            app:lineHeight="24dp"
+                            tools:text="김밥천국평양점" />
+
+                        <TextView
+                            style="@style/TextNotoReg14"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="6dp"
+                            android:text=""
+                            android:textColor="#99000000"
+                            app:lineHeight="20dp"
+                            tools:text="" />
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <View
+                    android:id="@+id/v_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:alpha="0.12"
+                    android:background="@android:color/black"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_card" />
+
+                <EditText
+                    style="@style/TextNotoReg14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="@string/history_page_hint"
+                    android:paddingHorizontal="24dp"
+                    android:paddingTop="32dp"
+                    android:textColor="#99000000"
+                    android:textColorHint="#99000000"
+                    android:visibility="@{viewModel.mode == MessagePageMode.WHITE_BOARD ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/v_divider"
+                    tools:text="고단한 하루지만 고객님의 즐거움이 되기위해 저희는 오늘도 정성껏 만들고 있습니다~ 코로나 방지를 위해 방역도 지속적으로 하고있으니 다음에도 맛있는 음식 먹으러 꼭 다시 들러주세요 ~ 좋은 하루 보내세요~^^ 되기위해 저희는 오늘도 정성껏 만…" />
+
+                <TextView
+                    style="@style/TextNotoReg14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="top"
+                    android:paddingHorizontal="24dp"
+                    android:paddingTop="32dp"
+                    android:text="@{viewModel.boardItem.msg}"
+                    android:textColor="#99000000"
+                    android:visibility="@{viewModel.mode == MessagePageMode.VIEW ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/v_divider"
+                    tools:text="고단한 하루지만 고객님의 즐거움이 되기위해 저희는 오늘도 정성껏 만들고 있습니다~ 코로나 방지를 위해 방역도 지속적으로 하고있으니 다음에도 맛있는 음식 먹으러 꼭 다시 들러주세요 ~ 좋은 하루 보내세요~^^ 되기위해 저희는 오늘도 정성껏 만…" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:background="@{viewModel.mode == MessagePageMode.WHITE_BOARD ? @drawable/btn_send_text : @drawable/btn_wirte_white_board}"
+                android:onClick="@{ () -> viewModel.mode == MessagePageMode.WHITE_BOARD ? actionListener.onClickSubmit() : actionListener.onWriteBoard()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

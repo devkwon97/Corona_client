@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.angel.daily_heros.ui.main.qr.history.VisitorModel" />
+
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_background"
+        android:paddingHorizontal="20dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/background_white_rounded"
+            android:paddingVertical="16dp">
+
+
+            <LinearLayout
+                android:id="@+id/ll_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/v_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/background_oval_grey"
+                    android:padding="6dp"
+                    android:pb_img="@{model.pbType}" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/TextNotoReg12"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="@{model.name}"
+                    android:textColor="#99000000"
+                    app:lineHeight="24dp"
+                    tools:text="김명순" />
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/v_name"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="8dp"
+                android:alpha="0.12"
+                android:background="#171717"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_temperature"
+                app:layout_constraintStart_toEndOf="@+id/ll_person"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_temperature"
+                style="@style/TextNotoReg16"
+                android:layout_gravity="start"
+                android:paddingVertical="16dp"
+                android:text="@{@string/doc(model.temperature)}"
+                android:textColor="@{model.temperature > 38f ? @color/hot : @color/normal}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lineHeight="24dp"
+                tools:text="36.5°" />
+
+            <View
+                android:id="@+id/v_temperature"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="8dp"
+                android:alpha="0.12"
+                android:background="#171717"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_time"
+                app:layout_constraintStart_toEndOf="@+id/tv_temperature"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_time"
+                style="@style/TextNotoReg16"
+                android:layout_gravity="start"
+                android:paddingVertical="16dp"
+                android:text="@{model.checkInTime}"
+                android:textColor="#de000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/v_temperature"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lineHeight="24dp"
+                tools:text="10분 전" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>

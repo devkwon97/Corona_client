@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">체크인샵</string>
+    <string name="app_content">매장 방문고객 대상\n비대면 신뢰 구축 솔루션</string>
+
+
+    <string name="qr_guide">카메라로 QR코드 스캔</string>
+    <string name="history_page_guide">권경민님께서 다녀가신 매장입니다.</string>
+    <string name="white_board">화이트보드</string>
+    <string name="history_page_hint">글을 남겨주세요.</string>
+
+    <string name="press_two_shutdown">\'뒤로 버튼\'을 한번 더 누르시면 종료됩니다.</string>
+
+    <string name="message_page_guide">점주님의 메시지 수신함</string>
+
+    <string name="doc">%1$s°</string>
+    <string name="owner">%1$s 점주 %2$s</string>
+
+    <string name="check_list_title">COVID-19 체크리스트</string>
+    <string name="check_temperature_guide">현재 체온을 선택해 주세요.</string>
+    <string name="check_one">최근 2주간 코로나 확진자와 접촉한 적이 있나요?</string>
+    <string name="check_two">최근 2주간 해외에 방문하신 적이 있나요?</string>
+    <string name="check_three">최근 2주간 호흡기 증상을 경험한 적이 있나요?</string>
+    <string name="check_four">마스크를 착용하고 계신가요?</string>
+    <string name="check_five">매장 입장 시 손 소독제를 사용하셨나요?</string>
+
+
+    <string name="visit_history_page_guide">오늘 같은 장소를 방문했던\n분들의 리스트입니다.</string>
+
+
+</resources>

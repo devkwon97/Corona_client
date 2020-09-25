@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="main_background">#f8f8f8</color>
+
+    <color name="normal">#de000000</color>
+    <color name="hot">#e02020</color>
+
+
+    <color name="text_main_light_ed">#EDEDED</color>
+    <color name="text_body_light_d5">#D5D5D5</color>
+    <color name="text_secondary_light_d5">#D5D5D5</color>
+    <color name="text_secondary_disabled_light_d5">#D5D5D5</color>
+    <color name="text_hint_light_d5">#D5D5D5</color>
+    <color name="text_primary_light_c8">#C83C35</color>
+    <color name="text_positive_light_17">#17A783</color>
+    <color name="text_negative_light_ed">#ED2451</color>
+
+    <color name="text_main_22">#222222</color>
+    <color name="text_body_66">#666666</color>
+    <color name="text_secondary_99">#999999</color>
+    <color name="text_secondary_disabled_d5">#D5D5D5</color>
+    <color name="text_hint_BB">#BBBBBB</color>
+
+    <color name="text_default_dark_bg_ff">#ffffff</color>
+    <color name="text_default_reg_bg_ff">#ffffff</color>
+    <color name="text_primary_dark_bg_db">#DB534D</color>
+    <color name="text_positive_dark_bg_20">#20C69C</color>
+    <color name="text_negative_dark_bg_ed">#ED2451</color>
+
+
+</resources>

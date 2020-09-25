@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/v_oval_top"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/background_oval_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <View
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/background_oval_blue"
+            app:layout_constraintStart_toEndOf="@+id/v_oval_top"
+            app:layout_constraintTop_toBottomOf="@+id/v_oval_top" />
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:adjustViewBounds="true"
+            android:padding="4dp"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toTopOf="@+id/tv_title"
+            app:layout_constraintEnd_toEndOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_title" />
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TextNotoBold15"
+            android:text="체크인샵"
+            android:textColor="#121212"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.499" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            style="@style/TextNotoReg12"
+            android:layout_marginTop="37dp"
+            android:alpha="0.6"
+            android:gravity="center"
+            android:text="매장방문 안심 서비스"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+        <View
+            android:id="@+id/v_oval_bottom"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:background="@drawable/background_oval_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+
+        <View
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/background_oval_blue"
+            app:layout_constraintEnd_toStartOf="@+id/v_oval_bottom"
+            app:layout_constraintTop_toBottomOf="@+id/v_oval_bottom" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

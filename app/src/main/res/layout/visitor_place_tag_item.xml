@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.angel.daily_heros.ui.main.qr.history.VisitorPlaceModel" />
+
+        <variable
+            name="actionListener"
+            type="com.angel.daily_heros.ui.main.qr.history.VisitorPageActionListener" />
+
+        <variable
+            name="index"
+            type="Integer" />
+
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{() ->actionListener.onSelectPlaceTag(index)}"
+        android:background="@color/main_background"
+        android:paddingStart="0dp"
+        android:paddingEnd="8dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/TextNotoReg12"
+                android:layout_gravity="start"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="7dp"
+                android:text="@{model.place}"
+                android:textColor="#de000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lineHeight="24dp"
+                app:visitor_place_checked="@{model.checked}"
+                tools:background="@drawable/background_blue_border"
+                tools:text="김명순" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>
